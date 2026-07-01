@@ -9,14 +9,26 @@ class UrbanRoutesPage:
 
         #Seção De e Para
 
-        from_field = (By.ID, 'from')
-        to_field = (By.ID, 'to')
+        FROM_FIELD = (By.ID, 'from')
+        TO_FIELD = (By.ID, 'to')
 
-        #Fluxo de chamada de táxi
+        #LOCALIZADORES - Solicitação de táxi
 
-        TAXI_OPTION = (By.XPATH, '//button[contains(text(), "Cahamar")]')
-        COMFORT_ICON = (By.XPATH, '//img[contains@src, "kids")]')
-        COMFORT_ACTIVE = (By.XPATH, '//*[@id="root"]//div[contains(@class, "active")]')
+        CALL_A_TAXI_BUTTON = (By.XPATH, '//button[text()="Chamar um táxi"]')
+
+        #LOCALIZADORES - Tarifas
+
+        COMFORT_TARIFF_OPTION = (By.XPATH, '//div[@class=tcard-title" and text()="Comfort"]')
+        CURRENT_TARIFF        = (By.XPATH, '//div[@class="tcard active"]//div[@class=tcard-title"]')
+
+        #LOCALIZADORES - Telefone
+
+        ADD_PHONE_NUMBER_MAIN_BUTTON = (By.XPATH, '//div[@class="np-button"]//div[contains(text(), "Número de telefone")]')
+        PHONE_NUMBER_INPUT_FIELD     = (By.ID,    'phone')
+        PHONE_NUMBER_NEXT_BUTTON     = (By.XPATH, '//button[text()="Próximo"]')
+        PHONE_CODE_FIELD             = (By.ID,    'code')
+        PHONE_NUMBER_CONFIRM_BUTTON  = (By.XPATH, '//button[contains(text(), "Confirmar")]')
+        REGISTERED_PHONE_NUMBER      = (By.XPATH, '//div[@contains(@class, "np-text")]')
 
         def __init__(self, driver):
             self.driver = driver
